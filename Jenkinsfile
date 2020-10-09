@@ -1,11 +1,11 @@
 pipeline {
     agent {
-        docker 'maven:3-alpine'
+        dockerfile true
     }
     stages {
         stage('Test') {
             steps {
-                sh 'mvn -B -e clean test'
+                sh 'mvn -B -X clean test'
             }
         }
     }
